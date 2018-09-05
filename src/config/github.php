@@ -6,6 +6,8 @@ return [
 
     'controller' => \mrcrmn\Github\Http\Controller\WebhookController::class,
 
+    'middleware-name' => 'github',
+
     'middleware' => [
         \mrcrmn\Github\Http\Middleware\VerifyGithubSecret::class,
         //
