@@ -1,0 +1,25 @@
+{
+    "name": "mrcrmn/laravel-github-webhooks",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mrcrmn",
+            "email": "marcoreimann@outlook.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "mrcrmn\\Github\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "mrcrmn\\Github\\Provider\\GithubServiceProvider"
+            ]
+        }
+    }
+}
