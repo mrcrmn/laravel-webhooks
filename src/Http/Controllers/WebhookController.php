@@ -7,11 +7,7 @@ use Illuminate\Routing\Controller;
 
 class WebhookController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(config('github.middleware-name'));
-    }
-
+    
     protected function handleEvent($request)
     {
         $event = $request->header('X-GitHub-Event');
