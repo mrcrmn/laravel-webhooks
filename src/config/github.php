@@ -1,7 +1,11 @@
 <?php
 
 return [
-
+    
+    // Enter the name of your Github repository here.
+    // This is needed, so we can verify the request.
+    'repository' => 'username/repository',
+    
     // Here you can set the route, where your Github webhook should point to.
     'uri' => '/webhook',
 
