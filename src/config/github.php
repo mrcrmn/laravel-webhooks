@@ -37,6 +37,11 @@ return [
     // Maintenance mode while we deploy the update
     'maintenance-mode' => true,
     
+    // By default we log everything that is outputted
+    // on the console during deployment.
+    'log_enabled' => true,
+    'log_file' => 'deployments.log',
+    
     // These are the commands, that should be executed as
     // part of the deployment. These are executed from
     // top to bottom. You may add your own commands
