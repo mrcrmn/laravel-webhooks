@@ -2,8 +2,9 @@
 
 return [
     
-    // Enter the name of your Github repository here.
-    // This is needed, so we can verify the request.
+    // Here you need to enter the name of your Github Repository.
+    // This is needed, so we can verify that the Webhook does
+    // actually target your application.
     'repository' => 'username/repository',
     
     // Here you can set the route, where your Github webhook should point to.
