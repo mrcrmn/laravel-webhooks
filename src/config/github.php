@@ -10,10 +10,13 @@ return [
 
     'middleware' => [
         \mrcrmn\Github\Http\Middleware\VerifyGithubSecret::class,
+        \mrcrmn\Github\Http\Middleware\CanHandleGithubEvent::class,
         //
     ],
 
     'secret' => env('GITHUB_SECRET', null),
+    
+    'maintenance-mode' => true,
 
     'commands' => [
         'git',
@@ -44,7 +47,7 @@ return [
 
     'npm' => [
         'enabled' => false,
-        'command' => 'npm run prod'
+        'command' => 'npm install && npm run prod'
     ],
 
 ];
