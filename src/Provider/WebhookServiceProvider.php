@@ -7,6 +7,7 @@ use Illuminate\Routing\Router;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use mrcrmn\Webhook\Adapter\GithubAdapter;
+use mrcrmn\Webhook\Commands\DeployCommand;
 
 class WebhookServiceProvider extends ServiceProvider
 {
@@ -36,5 +37,9 @@ class WebhookServiceProvider extends ServiceProvider
         );
 
         $this->loadRoutesFrom(__DIR__ . '/../routes/webhook.php');
+    
+        $this->commands([
+            DeployCommand::class,
+        ]);
     }
 }

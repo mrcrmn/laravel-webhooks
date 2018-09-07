@@ -11,7 +11,9 @@ class WebhookController extends Controller
     
     public function __invoke(Request $request)
     {
-        return Webhook::handle();
+        $message = Webhook::handle();
+
+        return response($message);
     }
 
 }
