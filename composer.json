@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "mrcrmn\\Github\\": "src/"
+            "mrcrmn\\Webhook\\": "src/"
         }
     },
     "minimum-stability": "stable",
@@ -18,8 +18,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "mrcrmn\\Github\\Provider\\GithubServiceProvider"
-            ]
+                "mrcrmn\\Webhook\\Provider\\WebhookServiceProvider"
+            ],
+            "aliases": {
+                "Webhook": "mrcrmn\\Webhook\\Facade\\Webhook"
+            }
         }
     }
 }

@@ -6,22 +6,24 @@ return [
     // This is needed, so we can verify that the Webhook does
     // actually target your application.
     'repository' => 'username/repository',
+
+    'adapter' => 'github',
     
     // Here you can set the route, where your Github webhook should point to.
     'uri' => '/webhook',
 
     // This is the controller which handles the event.
-    'controller' => \mrcrmn\Github\Http\Controller\WebhookController::class,
+    'controller' => \mrcrmn\Webhook\Http\Controllers\WebhookController::class,
 
     // The name of the middleware group that is applied to the route.
-    'middleware-name' => 'github',
+    'middleware-name' => 'webhook',
 
     // These are the middleware that protect your applications webhook route.
     // By default we need to verify Github's signature, verify the hash
     // and also check if we can handle the incoming Github event.
     'middleware' => [
-        \mrcrmn\Github\Http\Middleware\VerifyGithubSecret::class,
-        \mrcrmn\Github\Http\Middleware\CanHandleGithubEvent::class,
+        \mrcrmn\Webhook\Http\Middleware\VerifySignature::class,
+        \mrcrmn\Webhook\Http\Middleware\CanHandleWebhookEvent::class,
         // 
     ],
 
@@ -31,7 +33,7 @@ return [
     'events' => [
         'push',
         // '*'
-    ]
+    ],
     
     // This is the secret. This is needed, so your application
     // is properly protected and only Github can post to it

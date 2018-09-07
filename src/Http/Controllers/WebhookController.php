@@ -1,28 +1,17 @@
 <?php
 
-namespace mrcrmn\Github\Http\Controllers;
+namespace mrcrmn\Webhook\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use mrcrmn\Webhook\Facade\Webhook;
 
 class WebhookController extends Controller
 {
     
-    protected function handleEvent($request)
-    {
-        $event = $request->header('X-GitHub-Event');
-
-        return $this->${$event}($request);
-    }
-
     public function __invoke(Request $request)
     {
-        return $this->handleEvent($request);
-        dump($request->all());
+        return Webhook::handle();
     }
 
-    public function push()
-    {
-
-    }
 }
