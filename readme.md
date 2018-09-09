@@ -3,6 +3,7 @@ This package allows you to add closure based handlers to GitHub or GitLab Webhoo
 A 'push' handler for autodeploying is included out-of-the-box but feel free to add your own one.
 
 ## Features
+* Auto-deployment out-of-the-box
 * Highly configurable
 * Middleware protection
 * GitHub and GitLab support
