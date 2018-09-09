@@ -9,8 +9,8 @@ class VerifySignature
 {
     public function handle($request, Closure $next)
     {
-        if (! Webhook::verifySignature() && ! app()->isLocal()) {
-            abort(401);
+        if (! Webhook::verifySignature()) {
+            abort(401, "Secret cannot be verified.");
         }
 
         return $next($request);

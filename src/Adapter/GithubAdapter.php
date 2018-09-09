@@ -17,8 +17,11 @@ class GithubAdapter extends WebhookService
      */
     public function verifySignature()
     {
-        list($algo, $hash) = explode('=', $this->request->header('x-hub-signature'), 2);
+        if (is_null(config('webhook.secret', null)) && is_null($this->request->header('x-hub-signature', true))) {
+            return true;
+        }
 
+        list($algo, $hash) = explode('=', $this->request->header('x-hub-signature'), 2);
         return $hash === hash_hmac($algo, $this->request->getContent(), config('webhook.secret'));
     }
 

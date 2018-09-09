@@ -7,6 +7,7 @@ use Illuminate\Routing\Router;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use mrcrmn\Webhook\Adapter\GithubAdapter;
+use mrcrmn\Webhook\Adapter\GitlabAdapter;
 use mrcrmn\Webhook\Commands\DeployCommand;
 
 class WebhookServiceProvider extends ServiceProvider
@@ -23,7 +24,7 @@ class WebhookServiceProvider extends ServiceProvider
                     return new GithubAdapter(request());
                     break;
                 case 'gitlab':
-                    // return new
+                    return new GitlabAdapter(request());
                     break;
             }
         });
