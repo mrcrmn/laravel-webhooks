@@ -16,6 +16,14 @@ Edit the `config/webhook.php`file as needed.
 #### For Laravel < 5.5
 If you are not using Laravels auto discovery, you need to add `mrcrmn\Webhook\Provider\WebhookServiceProvider::class` to the `config/app.php` provider array, as well as `'Webhook' => mrcrmn\Webhook\Facade\Webhook::class` to the facades.
 
+## Adding a event handler
+To register an event handler, you need to go to your `AppServiceProvider` and add the following to the `boot` method:
+```php
+Webhook::handler('push', function($request){
+    Artisan::call('deploy');
+})
+```
+
 
 ## Configuration
 
