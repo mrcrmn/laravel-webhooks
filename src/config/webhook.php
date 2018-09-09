@@ -5,7 +5,7 @@ return [
     // Here you need to enter the name of your git Repository.
     // This is needed, so we can verify that the Webhook does
     // actually target your application.
-    'repository' => 'mrcrmn/laravel-github-webhooks',
+    'repository' => 'username/repository',
 
     // The production branch name.
     'branch' => 'master',
