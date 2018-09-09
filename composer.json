@@ -1,5 +1,5 @@
 {
-    "name": "mrcrmn/laravel-github-webhooks",
+    "name": "mrcrmn/laravel-webhooks",
     "type": "library",
     "license": "MIT",
     "authors": [
