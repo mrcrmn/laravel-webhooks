@@ -2,13 +2,13 @@
 This package allows you to add closure based handlers to GitHub or GitLab Webhooks.
 A 'push' handler for autodeploying is included out-of-the-box but feel free to add your own one.
 
-### Features
+## Features
 * Highly configurable
 * Middleware protection
 * GitHub and GitLab support
 * Custom event handlers
 
-### Installation
+## Installation
 Run `composer require mrcrmn/laravel-webhooks`.  
 Publish the configuration file `php artisan vendor:publish --provider=mrcrmn/laravel-webhooks`.  
 Edit the `config/webhook.php`file as needed.
@@ -17,7 +17,7 @@ Edit the `config/webhook.php`file as needed.
 If you are not using Laravels auto discovery, you need to add `mrcrmn\Webhook\Provider\WebhookServiceProvider::class` to the `config/app.php` provider array, as well as `'Webhook' => mrcrmn\Webhook\Facade\Webhook::class` to the facades.
 
 
-### Configuration
+## Configuration
 
 #### `repository`
 Specify your git repository name here. This is needed so we can verfify the integrity of the webhook request.
@@ -55,5 +55,5 @@ If one of your commands returns a status code >= 1, command execution will stop 
 #### `commands`
 This is the array of commands that are executed when you push to your given branch. Feel free to remove or add your own commands. Make sure you know what you are doing!
 
-### Logs
+## Logs
 The output of all executed commands are written to the default Log driver.
