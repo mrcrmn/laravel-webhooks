@@ -3,7 +3,7 @@ This package allows you to add closure based handlers to GitHub or GitLab Webhoo
 A 'push' handler for autodeploying is included out-of-the-box but feel free to add your own one.
 
 ## Features
-* Auto-deployment out-of-the-box
+* Auto-deployment
 * Highly configurable
 * Middleware protection
 * GitHub and GitLab support
@@ -20,10 +20,17 @@ If you are not using Laravels auto discovery, you need to add `mrcrmn\Webhook\Pr
 ## Adding a event handler
 To register an event handler, you need to go to your `AppServiceProvider` and add the following to the `boot` method:
 ```php
+use mrcrmn\Webhook\Facade\Webhook;
+
 Webhook::handler('push', function($request){
     Artisan::call('deploy');
-})
+});
 ```
+
+## Autodeploy
+This package can run several configurable commands once a webhook hits your application.
+It will execute the given commands from top to bottom in the root laravel directory.
+If a command returns an exit code > 0, command execution will stop. All outputs will be logged by your default log driver. Make sure to check if everything went as exprected!
 
 
 ## Configuration
