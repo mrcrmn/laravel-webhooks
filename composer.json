@@ -18,7 +18,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "mrcrmn\\Webhook\\Provider\\WebhookServiceProvider"
+                "mrcrmn\\Webhook\\WebhookServiceProvider"
             ],
             "aliases": {
                 "Webhook": "mrcrmn\\Webhook\\Facade\\Webhook"
