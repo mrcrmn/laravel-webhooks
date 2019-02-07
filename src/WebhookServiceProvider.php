@@ -1,6 +1,6 @@
 <?php
 
-namespace mrcrmn\Webhook\Provider;
+namespace mrcrmn\Webhook;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;

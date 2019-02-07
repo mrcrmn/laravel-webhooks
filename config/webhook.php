@@ -10,7 +10,7 @@ return [
     // The production branch name.
     'branch' => 'master',
 
-    // The adapter. Currently only Github is supported.
+    // The adapter. Currently only GitHub and GitLab is supported.
     'adapter' => 'github',
     
     // Here you can set the route, where the webhook should point to.
